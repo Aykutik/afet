@@ -16,6 +16,11 @@ function index() {
     router.push("/destekol/destekol_malzemepaylas");
   };
 
+  const handleSubmit_isimkanisagla = () => {
+    console.log("Giriş Yapıldı liste");
+    router.push("/destekol/destekol_is");
+  };
+
   const handleSubmit_yardımet = () => {
     console.log("Giriş Yapıldı harita");
     router.push("/destekol/destekol_ekibeyardimet");
@@ -44,6 +49,13 @@ function index() {
               action="Button"
             />
           </div>
+          <div>
+            <FormAction
+              handleSubmit={handleSubmit_isimkanisagla}
+              text="İş İmkanı Sağla"
+              action="Button"
+            />
+          </div>
         </div>
         <div className="w-52 grid gap-3 grid-rows-2 ml-5">
           <div>
@@ -60,7 +72,6 @@ function index() {
               action="Button"
             />
           </div>
-          
         </div>
       </div>
     </div>
