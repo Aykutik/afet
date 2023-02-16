@@ -42,7 +42,7 @@ const yenikayitFields=[
         name:"açıklama",
         type:"text",
         isRequired:true,
-        placeholder:"AÇIKLAMA"
+        placeholder:"DESTEK İSTEDİĞİNİZ KONU?"
     },
 ]
 
