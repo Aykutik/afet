@@ -31,7 +31,7 @@ const Footer = () => {
               <ul className="space-y-1">
                 <li>
                   <a rel="noopener noreferrer" href="#">
-                   Genç Oluşum Derneği 2
+                   Genç Oluşum Derneği
                   </a>
                 </li>
                 <li>
