@@ -18,8 +18,8 @@ function Harita() {
         <iframe
           id="harita-iframe"
           src="https://www.google.com/maps/d/u/1/embed?mid=1KaSZXEaG4D6ItpVSKmeUVgQgQL1P9Zg&ehbc=2E312F"
-          width="100%"
-          height="100%"
+          width="80%"
+          height="70%"
         ></iframe>
       </div>
     </div>

@@ -5,8 +5,8 @@ function index() {
     <div>
       <div className="relative z-10 overflow-hidden lg:py-[120px]">
         <div className="flex items-center justify-center">
-          <div className="mx-auto flex w-2/5">
-            <div className="p-1.5 w-full inline-block">
+          <div className="mx-auto flex flex-col lg:flex-row w-full">
+            <div className="p-1.5 w-full lg:w-1/2 inline-block">
               <div className="bg-white border rounded-md px-2 py-2 mb-2 font-bold">
                 <h1>Telefon Numaraları</h1>
               </div>
@@ -69,27 +69,25 @@ function index() {
                   <tbody className="bg-white">
                     <tr className="text-[10pt] tel:text-[8pt]">
                       <td className="px-2 py-2 tel:px-2 tel:py-1 whitespace-nowrap">
-                        <a 
-                        href="https://cankiri.afad.gov.tr/"
-                        rel="noopener noreferrer"
-                        target={"_blank"}
+                        <a
+                          href="https://cankiri.afad.gov.tr/"
+                          rel="noopener noreferrer"
+                          target={"_blank"}
                         >
-                            ÇANKIRI AFAD
+                          ÇANKIRI AFAD
                         </a>
                       </td>
-                      
                     </tr>
                     <tr className="text-[10pt] tel:text-[8pt]">
                       <td className="px-2 py-2 tel:px-2 tel:py-1 whitespace-nowrap">
-                        <a 
-                        href="https://cankiri.bel.tr/"
-                        rel="noopener noreferrer"
-                        target={"_blank"}
+                        <a
+                          href="https://cankiri.bel.tr/"
+                          rel="noopener noreferrer"
+                          target={"_blank"}
                         >
-                            ÇANKIRI BELEDİYESİ
+                          ÇANKIRI BELEDİYESİ
                         </a>
                       </td>
-                      
                     </tr>
                   </tbody>
                 </table>
