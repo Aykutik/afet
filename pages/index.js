@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <div className="relative z-10 overflow-hidden py-20 lg:py-[120px]">
       <div className="flex items-center justify-center mt-48">
-        <div className="w-52 grid gap-3 grid-rows-2">
+        <div className="w-44 grid gap-3 grid-rows-2">
           <div>
             <FormAction
               handleSubmit={handleSubmit_destekal}

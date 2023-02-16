@@ -34,7 +34,7 @@ function index() {
   return (
     <div className="relative z-10 overflow-hidden py-20 lg:py-[120px]">
       <div className="flex items-center justify-center mt-48">
-        <div className="w-52 grid gap-3 grid-rows-2">
+        <div className="p-2 w-44 grid gap-2 grid-rows-2">
           <div>
             <FormAction
               handleSubmit={handleSubmit_evinipaylaş}
@@ -57,7 +57,7 @@ function index() {
             />
           </div>
         </div>
-        <div className="w-52 grid gap-3 grid-rows-2 ml-5">
+        <div className="w-52 grid gap-3 grid-rows-2 ml-5 mr-5">
           <div>
             <FormAction
               handleSubmit={handleSubmit_yardımet}

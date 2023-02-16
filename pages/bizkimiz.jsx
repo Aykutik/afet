@@ -15,9 +15,7 @@ function iletisim() {
                     </h2>
                     <p class="text-body-color mb-9 text-base leading-relaxed">
                       En basit ifade ile daha iyi bir yaşam talep eden sıradan
-                      vatandaşlarız. Evrensel değerlere bağlı, karar alma gücünü
-                      merkezi oluşumların şubeciliğini yaparak değil kendi
-                      heybesinde arayan bir sivil toplum grubuyuz. Eyleyerek
+                      vatandaşlarız. Evrensel değerlere bağlı, eyleyerek
                       öğrenmeyi, hata yapmayı ve sivil hareketleri çok severiz.
                     </p>
                     <h1><b>Derdimiz Ne?</b></h1>
