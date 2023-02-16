@@ -3,27 +3,27 @@ import React from "react";
 import FormAction from "@/components/FormAction";
 import { Router, useRouter } from "next/router";
 
-export default function Home() {
+function index() {
   const router = useRouter();
 
-  const handleSubmit_destekal = () => {
+  const handleSubmit_evinipaylaş = () => {
     console.log("Giriş Yapıldı yeni kayıt");
-    router.push("/destekal");
+    router.push("/destekol/destekol_evinipaylas");
   };
 
-  const handleSubmit_destekol = () => {
+  const handleSubmit_mazleme = () => {
     console.log("Giriş Yapıldı liste");
-    router.push("/destekol");
+    router.push("/destekol/destekol_malzemepaylas");
   };
 
-  const handleSubmit_harita = () => {
+  const handleSubmit_yardımet = () => {
     console.log("Giriş Yapıldı harita");
-    router.push("/harita");
+    router.push("/destekol/destekol_ekibeyardimet");
   };
 
-  const handleSubmit_bilgiler = () => {
+  const handleSubmit_ekibekatil = () => {
     console.log("Giriş Yapıldı harita");
-    router.push("/onemlibilgiler");
+    router.push("/destekol/destekol_ekibekatil");
   };
 
   return (
@@ -32,15 +32,15 @@ export default function Home() {
         <div className="w-52 grid gap-3 grid-rows-2">
           <div>
             <FormAction
-              handleSubmit={handleSubmit_destekal}
-              text="Destek Al"
+              handleSubmit={handleSubmit_evinipaylaş}
+              text="Evini Paylaş"
               action="Button"
             />
           </div>
           <div>
             <FormAction
-              handleSubmit={handleSubmit_destekol}
-              text="Destek Ol"
+              handleSubmit={handleSubmit_mazleme}
+              text="Malzeme Bağışla"
               action="Button"
             />
           </div>
@@ -48,20 +48,23 @@ export default function Home() {
         <div className="w-52 grid gap-3 grid-rows-2 ml-5">
           <div>
             <FormAction
-              handleSubmit={handleSubmit_harita}
-              text="Çankırı Bilgi Haritası"
+              handleSubmit={handleSubmit_yardımet}
+              text="Afet bölgesine gidecek ekibe yardım et"
               action="Button"
             />
           </div>
           <div>
             <FormAction
-              handleSubmit={handleSubmit_bilgiler}
-              text="Önemli Bilgiler"
+              handleSubmit={handleSubmit_ekibekatil}
+              text="Afet bölgesine gidecek ekibe katıl"
               action="Button"
             />
           </div>
+          
         </div>
       </div>
     </div>
   );
 }
+
+export default index;
