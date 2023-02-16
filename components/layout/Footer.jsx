@@ -35,14 +35,14 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <Link href="/iletisim">
-                    İletişim
+                  <Link href="/bizkimiz">
+                    Biz Kimiz
                   </Link>
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Yararlı Lİnkler
-                  </a>
+                  <Link href="/iletisim">
+                    İletişim
+                  </Link>
                 </li>
               </ul>
             </div>
