@@ -11,8 +11,8 @@ const malzemebagislaFields=[
     {
         labelText:"İletişim Numarası",
         labelFor:"iletisim",
-        id:"iletisim",
-        name:"iletisim",
+        id:"telefon",
+        name:"telefon",
         type:"text",
         isRequired:false,
         placeholder:"İLETİŞİM NUMARASI"
@@ -28,12 +28,12 @@ const malzemebagislaFields=[
     },
     {
         labelText:"Bağış yapabileceğiniz ürünlerin açıklaması",
-        labelFor:"açıklama",
-        id:"açıklama",
-        name:"açıklama",
+        labelFor:"aciklama",
+        id:"aciklama",
+        name:"aciklama",
         type:"text",
         isRequired:true,
-        placeholder:"Bağış yapabileceğiniz ürünlerin açıklaması"
+        placeholder:"Bağış yapabileceğiniz ürünler nelerdir?"
     },
 ]
 

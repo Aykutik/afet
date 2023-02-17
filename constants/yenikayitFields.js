@@ -19,11 +19,11 @@ const yenikayitFields=[
     },
     {
         labelText:"İletişim Numarası",
-        labelFor:"iletisim",
-        id:"iletisim",
-        name:"iletisim",
+        labelFor:"telefon",
+        id:"telefon",
+        name:"telefon",
         type:"text",
-        isRequired:false,
+        isRequired:true,
         placeholder:"İLETİŞİM NUMARASI"
     },
     {
@@ -38,8 +38,8 @@ const yenikayitFields=[
     {
         labelText:"Açıklama",
         labelFor:"açıklama",
-        id:"açıklama",
-        name:"açıklama",
+        id:"aciklama",
+        name:"aciklama",
         type:"text",
         isRequired:true,
         placeholder:"DESTEK İSTEDİĞİNİZ KONU?"

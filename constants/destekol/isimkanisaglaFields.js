@@ -1,4 +1,4 @@
-const malzemebagislaFields=[
+const isimkanisaglaFields=[
     {
         labelText:"Ad Soyad",
         labelFor:"adsoyad",
@@ -10,9 +10,9 @@ const malzemebagislaFields=[
     },
     {
         labelText:"İletişim Numarası",
-        labelFor:"iletisim",
-        id:"iletisim",
-        name:"iletisim",
+        labelFor:"telefon",
+        id:"telefon",
+        name:"telefon",
         type:"text",
         isRequired:true,
         placeholder:"İLETİŞİM NUMARASI"
@@ -55,4 +55,4 @@ const malzemebagislaFields=[
     },
 ]
 
-export default malzemebagislaFields
+export default isimkanisaglaFields

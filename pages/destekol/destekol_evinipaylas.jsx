@@ -6,6 +6,7 @@ import Input from "@/components/Input";
 import { Router, useRouter } from "next/router";
 import Header from "@/components/layout/destekal";
 import evinipaylasFields from "@/constants/destekol/evinipaylasFields";
+import axios from "axios";
 
 const fields = evinipaylasFields;
 let fieldsState = {};
@@ -14,20 +15,30 @@ fields.forEach((field) => (fieldsState[field.id] = ""));
 function destekol_evinipaylas() {
   const router = useRouter();
 
-  const [loginState, setLoginState] = useState(fieldsState);
+  const [bilgi, setBilgi] = useState(fieldsState);
+
+  //bugünün tarihini yazdıracağız:
+  const today = new Date();
+  const dd = String(today.getDate()).padStart(2, "0");
+  const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+  const yyyy = today.getFullYear();
+
+  const todayDate = yyyy + "-" + mm + "-" + dd;
 
   const handleChange = (e) => {
-    setLoginState({ ...loginState, [e.target.id]: e.target.value });
+    setBilgi({ ...bilgi, [e.target.id]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    authenticateUser();
+    console.log(bilgi);
+    getPersonel();
   };
 
-  //Handle Login API Integration here
-  const authenticateUser = () => {
-    router.push("/anasayfa");
+  const getPersonel = async () => {
+    const res = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL}/destekol/destekol?adsoyad=${bilgi.adsoyad}&telefon=${bilgi.telefon}&adres=${bilgi.adres}&aciklama=${bilgi.aciklama}&tarih=${todayDate}&konu=ev&meslek=&isyeri=`
+    );
   };
 
   return (
@@ -41,7 +52,7 @@ function destekol_evinipaylas() {
                 <Input
                   key={field.id}
                   handleChange={handleChange}
-                  value={loginState[field.id]}
+                  value={bilgi[field.id]}
                   labelText={field.labelText}
                   labelFor={field.labelFor}
                   id={field.id}

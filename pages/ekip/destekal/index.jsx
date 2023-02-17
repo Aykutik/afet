@@ -1,6 +1,27 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from "react";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 function index() {
+  const [talepler, setTalepler] = useState([]);
+
+  const liste = async () => {
+    try {
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL}/ekip/destekal?getir=genel`
+      );
+      setTalepler(res.data);
+      console.log(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    liste();
+  }, []);
+
   return (
     <div>
       <div className="relative z-10 overflow-hidden lg:py-[120px]">
@@ -20,50 +41,19 @@ function index() {
                     </tr>
                   </thead>
                   <tbody className="bg-white text-[6pt]">
-                    <tr className="">
-                      <td className="px-2 py-2 tel:px-2 tel:py-1 whitespace-nowrap">
-                        Ahmet Yılmaz
-                      </td>
-                      <td className="px-2 py-2 tel:px-2 tel:py-1 whitespace-nowrap">
-                        Kalacak Ev
-                      </td>
-                      <td className="px-2 py-2 tel:px-2 tel:py-1 whitespace-nowrap">
-                        beklemede
-                      </td>
-                    </tr>
-                    <tr >
-                      <td className="px-2 py-2 tel:px-2 tel:py-1 whitespace-nowrap">
-                        Ahmet Yılmaz
-                      </td>
-                      <td className="px-2 py-2 tel:px-2 tel:py-1 whitespace-nowrap">
-                        İş
-                      </td>
-                      <td className="px-2 py-2 tel:px-2 tel:py-1 whitespace-nowrap">
-                        çözüldü
-                      </td>
-                    </tr>
-                    <tr >
-                      <td className="px-2 py-2 tel:px-2 tel:py-1 whitespace-nowrap">
-                        Ahmet Yılmaz
-                      </td>
-                      <td className="px-2 py-2 tel:px-2 tel:py-1 whitespace-nowrap">
-                        Yardım Malzemesi
-                      </td>
-                      <td className="px-2 py-2 tel:px-2 tel:py-1 whitespace-nowrap">
-                        beklemede
-                      </td>
-                    </tr>
-                    <tr >
-                      <td className="px-2 py-2 tel:px-2 tel:py-1 whitespace-nowrap">
-                        Ahmet Yılmaz
-                      </td>
-                      <td className="px-2 py-2 tel:px-2 tel:py-1 whitespace-nowrap">
-                        Kalacak Ev
-                      </td>
-                      <td className="px-2 py-2 tel:px-2 tel:py-1 whitespace-nowrap">
-                        çözüldü
-                      </td>                      
-                    </tr>
+                    {talepler.map((talep) => (
+                      <tr key={talep.id}>
+                        <td className="px-2 py-2 tel:px-2 tel:py-1 whitespace-nowrap">
+                          {talep.adsoyad}
+                        </td>
+                        <td className="px-2 py-2 tel:px-2 tel:py-1 whitespace-nowrap">
+                          {talep.konu}
+                        </td>
+                        <td className="px-2 py-2 tel:px-2 tel:py-1 whitespace-nowrap">
+                          {talep.durum}
+                        </td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
