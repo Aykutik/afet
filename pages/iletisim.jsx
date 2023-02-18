@@ -5,12 +5,12 @@ function iletisim() {
     <div>
       <div className="">
         <div className="">
-          <section className="relative z-10 overflow-hidden py-20 lg:py-[120px] text-white">
+          <section className="relative z-10 overflow-hidden pr-10 px-20 lg:py-[40px] text-black">
             <div class="container mx-auto">
               <div class="-mx-4 flex flex-wrap lg:justify-between">
                 <div class="w-full px-4 lg:w-1/2 xl:w-6/12">
                   <div class="mb-12 mt-10 max-w-[570px] lg:mb-0">
-                    <h2 class="text-dark mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
+                    <h2 class="text-dark mb-6 text-[25px] font-bold uppercase sm:text-[40px] lg:text-[25px] xl:text-[35px]">
                       BİZİMLE İLETİŞİME GEÇİN
                     </h2>
                     <p class="text-body-color mb-9 text-base leading-relaxed">

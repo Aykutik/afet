@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className="w-full pt-30">
       {/* <footer className="px-4 divide-y dark:bg-secondary dark:text-gray-100"> */}
-      <footer className="px-4 divide-y text-white">
+      <footer className="px-4 divide-y text-yazi">
         <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
           <div className="lg:w-1/3 z-50 relative">
             <a
@@ -27,7 +27,7 @@ const Footer = () => {
 
             
             <div className="space-y-3">
-              <h3 className="uppercase dark:text-gray-50">Hakkımızda</h3>
+              <h3 className="uppercase">Hakkımızda</h3>
               <ul className="space-y-1">
                 <li>
                   <a rel="noopener noreferrer" href="#">
@@ -100,7 +100,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="py-6 text-sm text-center text-white">
+        <div className="py-6 text-sm text-center text-yazi">
           
           <div>© 2023 GEODER</div>
           <div>All rights reserved.</div>

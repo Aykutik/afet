@@ -2,6 +2,7 @@
 import React from "react";
 import FormAction from "@/components/FormAction";
 import { Router, useRouter } from "next/router";
+import Harita from "@/components/Harita";
 
 export default function Home() {
   const router = useRouter();
@@ -27,10 +28,10 @@ export default function Home() {
   };
 
   return (
-    <div className="relative z-10 overflow-hidden py-20 lg:py-[120px]">
-      <div className="flex items-center justify-center mt-48">
-        <div className="w-44 grid gap-3 grid-rows-2">
-          <div>
+    <div className="relative z-10 overflow-hidden py-5 lg:py-[60px]">
+      <div className="flex items-center justify-center mt-0">
+        <div className="flex">
+          <div className="mr-5">
             <FormAction
               handleSubmit={handleSubmit_destekal}
               text="Destek Al"
@@ -45,22 +46,10 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="w-52 grid gap-3 grid-rows-2 ml-5">
-          <div>
-            <FormAction
-              handleSubmit={handleSubmit_harita}
-              text="Çankırı Bilgi Haritası"
-              action="Button"
-            />
-          </div>
-          <div>
-            <FormAction
-              handleSubmit={handleSubmit_bilgiler}
-              text="Önemli Bilgiler"
-              action="Button"
-            />
-          </div>
-        </div>
+        
+      </div>
+      <div className="relative mt-16 w-full h-full">
+      <Harita />
       </div>
     </div>
   );

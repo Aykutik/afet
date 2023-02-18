@@ -46,9 +46,9 @@ export default function Login() {
   };
 
   return (
-    <div className="relative z-10 overflow-hiddenlg:py-[120px]">
+    <div className="relative z-10 overflow-hiddenlg:py-[100px]">
       <div className=" flex items-center justify-center">
-        <div className="max-w-md w-80 space-y-8">
+        <div className="max-w-md w-80 space-y-0">
           <Header heading={"Destek Al"} />
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>

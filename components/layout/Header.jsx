@@ -41,7 +41,7 @@ export default function Home() {
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <Link href="/">
-                <h2 className="text-2xl text-white font-bold">Yanındayız</h2>
+                <h2 className="text-2xl text-black font-bold">Yanındayız</h2>
               </Link>
               <div className="md:hidden">
                 <button
@@ -51,7 +51,7 @@ export default function Home() {
                   {navbar ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6 text-white"
+                      className="w-6 h-6 text-black"
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >
@@ -64,7 +64,7 @@ export default function Home() {
                   ) : (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6 text-white"
+                      className="w-6 h-6 text-black"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -88,12 +88,24 @@ export default function Home() {
               }`}
             >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                <li className="text-white">
-                  <Link href="/">Ana Sayfa</Link>
+                <li className="text-black">
+                  <Link href="/">Biz Kimiz</Link>
+                </li>
+
+                <li className="text-black">
+                  <Link href="/">Gönüllü ol</Link>
+                </li>
+
+                <li className="text-black">
+                  <Link href="/">Bağış Yap</Link>
+                </li>
+
+                <li className="text-black">
+                  <Link href="/">Önemli Bilgiler</Link>
                 </li>
 
                 {session ? (
-                  <li className="text-white">
+                  <li className="text-black">
                     <Link href="/ekip/admin">Talepler</Link>
                   </li>
                 ) : (
@@ -102,10 +114,10 @@ export default function Home() {
 
                 {/* Login işlemleri */}
                 {session ? (
-                  <li className="text-white">
+                  <li className="text-black">
                     <Menu as="div" className="relative inline-block text-left">
                       <div>
-                        <Menu.Button className="inline-flex w-full justify-center rounded-md bg-opacity-20 px-4 py-2 text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+                        <Menu.Button className="inline-flex w-full justify-center rounded-md bg-opacity-20 px-4 py-2 text-black hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                           {peradsoyad == "" ? "Giriş Yap" : peradsoyad}
                           <ChevronDownIcon
                             className="ml-2 -mr-1 h-5 w-5 text-violet-200 hover:text-violet-100"
@@ -132,7 +144,7 @@ export default function Home() {
                                     <button
                                       className={`${
                                         active
-                                          ? "bg-violet-500 text-white"
+                                          ? "bg-violet-500 text-black"
                                           : "text-gray-900"
                                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                                     >
@@ -162,7 +174,7 @@ export default function Home() {
                                     <button
                                       className={`${
                                         active
-                                          ? "bg-violet-500 text-white"
+                                          ? "bg-violet-500 text-black"
                                           : "text-gray-900"
                                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                                     >

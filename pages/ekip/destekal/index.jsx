@@ -32,7 +32,7 @@ function index() {
                 <h1>Destek Talepleri</h1>
               </div>
               <div className="overflow-hidden border rounded-lg bg-arkaplan">
-                <table className="min-w-full divide-y divide-gray-200 ">
+                <table className="min-w-full divide-y divide-gray-200 bg-tablo ">
                   <thead className="bg-gray-50 h-8 text-[10pt] text-left tel:text-[9pt]">
                     <tr className="px-2">
                       <th className="px-2">Adsoyad</th>
@@ -46,7 +46,7 @@ function index() {
                         key={talep.id}
                         className={`${
                           talep.durum === "tamamlandı"
-                            ? "bg-green-600 text-white"
+                            ? "bg-green-600 text-yazi"
                             : "bg-white"
                         }`}
                       >
