@@ -7,6 +7,7 @@ import { Router, useRouter } from "next/router";
 import Header from "@/components/layout/destekal";
 import evinipaylasFields from "@/constants/destekol/evinipaylasFields";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const fields = evinipaylasFields;
 let fieldsState = {};
@@ -36,9 +37,16 @@ function destekol_evinipaylas() {
   };
 
   const getPersonel = async () => {
-    const res = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}/destekol/destekol?adsoyad=${bilgi.adsoyad}&telefon=${bilgi.telefon}&adres=${bilgi.adres}&aciklama=${bilgi.aciklama}&tarih=${todayDate}&konu=ev&meslek=&isyeri=`
-    );
+    try {
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/destekol/destekol?adsoyad=${bilgi.adsoyad}&telefon=${bilgi.telefon}&adres=${bilgi.adres}&aciklama=${bilgi.aciklama}&tarih=${todayDate}&konu=ev&meslek=&isyeri=`
+      );
+      toast.success("Talebiniz Alındı. En Kısa Sürede İletişime Geçilecektir." , {autoClose: 1000});
+      router.push("/");
+    } catch (error) {
+      console.log(error);
+      toast.error("Talebiniz Alınamadı. Lütfen Tekrar Deneyiniz." , {autoClose: 1000});
+    }    
   };
 
   return (

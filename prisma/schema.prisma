@@ -7,6 +7,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id            String    @id
+  name          String?
+  pertcno       String?   @unique(map: "User_email_key") @db.VarChar(11)
+  password      String?   @db.VarChar(15)
+  email         String?   @db.VarChar(11)
+  emailVerified DateTime?
+  image         String?
+  Account       Account[]
+  Session       Session[]
+}
+
 model Account {
   id                String  @id
   userId            String
@@ -36,34 +48,57 @@ model Session {
   @@index([userId], map: "Session_userId_fkey")
 }
 
-model User {
-  id            String    @id
-  name          String?
-  pertcno       String?   @unique(map: "User_email_key") @db.VarChar(11)
-  emailVerified DateTime?
-  image         String?
-  Account       Account[]
-  Session       Session[]
-}
-
 model destekal {
-  id      Int       @unique(map: "id") @default(autoincrement())
-  adsoyad String?   @db.Char(50)
-  tcno    String?   @db.Char(11)
-  telefon String?   @db.Char(20)
-  adres   String?   @db.Char(250)
-  konu    String?   @db.Char(250)
-  tarih   DateTime? @db.Date
-  durum   String?   @db.Char(15)
+  id              Int       @unique(map: "id") @default(autoincrement())
+  adsoyad         String?   @db.Char(50)
+  tcno            String?   @db.Char(11)
+  telefon         String?   @db.Char(20)
+  adres           String?   @db.Char(250)
+  konu            String?   @db.Char(250)
+  tarih           DateTime? @db.Date
+  durum           String?   @default("beklemede") @db.Char(15)
+  kapand_         Int?      @default(0) @map("kapandı")
+  kapatan         String?   @db.Char(50)
+  kapatanaciklama String?   @db.Char(255)
+  kapatmatarihi   DateTime? @db.Date
+  silindi         Int?      @default(0)
 }
 
 model destekol {
-  id       Int       @unique(map: "id") @default(autoincrement())
-  adsoyad  String?   @db.Char(50)
-  telefon  String?   @db.Char(50)
-  adres    String?   @db.Char(255)
-  konu     String?   @db.Char(50)
-  aciklama String?   @db.VarChar(500)
-  tarih    DateTime? @db.Date
-  durum    String?   @db.Char(30)
+  id              Int       @unique(map: "id") @default(autoincrement())
+  adsoyad         String?   @db.Char(50)
+  isyeri          String?   @db.Char(70)
+  meslek          String?   @db.Char(70)
+  yas             String?   @db.Char(2)
+  telefon         String?   @db.Char(50)
+  adres           String?   @db.Char(255)
+  konu            String?   @db.Char(50)
+  aciklama        String?   @db.VarChar(500)
+  tarih           DateTime? @db.Date
+  durum           String?   @default("beklemede") @db.Char(30)
+  kapand_         String?   @default("0") @map("kapandı") @db.Char(30)
+  kapatan         String?   @db.Char(30)
+  kapatanaciklama String?   @db.Char(255)
+  kapatmatarihi   String?   @db.Char(30)
+  silindi         String?   @default("0") @db.Char(30)
+}
+
+model bilgi_telefon {
+  id            Int     @unique(map: "id") @default(autoincrement())
+  birim         String? @db.Char(100)
+  telefon       String? @db.Char(50)
+  aciklama      String? @db.Char(50)
+  ekleyen       String? @db.Char(50)
+  eklenmetarihi String? @db.Char(50)
+  onay          Int?    @default(0)
+}
+
+model bilgi_web {
+  id            Int     @unique(map: "id") @default(autoincrement())
+  birim         String? @db.Char(50)
+  web           String? @db.Char(250)
+  aciklama      String? @db.Char(250)
+  ekleyen       String? @db.Char(50)
+  eklenmetarihi String? @db.Char(50)
+  onay          Int?    @default(0)
 }

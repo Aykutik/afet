@@ -4,9 +4,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export default async (req, res) => {
-
   if (req.method === "POST") {
-
     const { adsoyad } = req.query;
     const { tcno } = req.query;
     const { telefon } = req.query;
@@ -24,10 +22,16 @@ export default async (req, res) => {
       console.log(err);
       res.status(403).json({ err: "Error occured." });
     }
-
   } else if (req.method === "GET") {
-    const result = await prisma.$queryRaw`SELECT * FROM destekal`;
-    res.status(200).json(result);
-  }
+    const { getir } = req.query;
+    console.log("getir: " + getir);
 
+    if (getir === "genel") {
+      const result = await prisma.$queryRaw`SELECT * FROM destekal`;
+      res.status(200).json(result);
+    } else {
+      const result = await prisma.$queryRaw`SELECT * FROM destekal where id=${getir}`;
+      res.status(200).json(result.data);
+    }
+  }
 };

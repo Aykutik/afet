@@ -7,6 +7,7 @@ import { Router, useRouter } from "next/router";
 import Header from "@/components/layout/destekal";
 import malzemebagislaFields from "@/constants/destekol/malzemebagislaFields";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const fields = malzemebagislaFields;
 let fieldsState = {};
@@ -36,16 +37,22 @@ function destekol_evinipaylas() {
   };
 
   const getPersonel = async () => {
-    const res = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}/destekol/destekol?adsoyad=${bilgi.adsoyad}&telefon=${bilgi.telefon}&adres=${bilgi.adres}&aciklama=${bilgi.aciklama}&tarih=${todayDate}&konu=malzeme&meslek=&isyeri=`
-    );
+    try {
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/destekol/destekol?adsoyad=${bilgi.adsoyad}&telefon=${bilgi.telefon}&adres=${bilgi.adres}&aciklama=${bilgi.aciklama}&tarih=${todayDate}&konu=malzeme&meslek=&isyeri=&yas=`
+      );
+      toast.success("Talebiniz Alındı. En Kısa Sürede İletişime Geçilecektir." , {autoClose: 1000});
+      router.push("/destekol");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
     <div className="relative z-10 overflow-hiddenlg:py-[120px]">
       <div className="flex items-center justify-center">
         <div className="max-w-md w-80 space-y-8">
-          <Header heading={"Evini Paylaş"} />
+          <Header heading={"Malzeme Paylaş"} />
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
               {fields.map((field) => (

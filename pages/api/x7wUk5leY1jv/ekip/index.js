@@ -13,7 +13,6 @@ export default async (req, res) => {
     const { aciklama } = req.query;
     const { meslek } = req.query;
     const { isyeri } = req.query;
-    const { yas } = req.query;
 
     console.log(adsoyad);
     console.log(telefon);
@@ -24,7 +23,7 @@ export default async (req, res) => {
 
     try {
       const result =
-        await prisma.$queryRaw`INSERT INTO destekol (adsoyad,telefon,adres,konu,tarih,aciklama,meslek,isyeri,yas) VALUES (${adsoyad},${telefon},${adres},${konu},${tarih},${aciklama},${meslek},${isyeri},${yas})`;
+        await prisma.$queryRaw`INSERT INTO destekol (adsoyad,telefon,adres,konu,tarih,aciklama,meslek,isyeri) VALUES (${adsoyad},${telefon},${adres},${konu},${tarih},${aciklama},${meslek},${isyeri})`;
 
       console.log("yeni destek al talebi eklendi");
       res.status(200).json(result);
@@ -34,18 +33,15 @@ export default async (req, res) => {
     }
   } else if (req.method === "GET") {
     const { getir } = req.query;
-    const { durum } = req.query;
+    console.log("getir: " +getir);
 
-    if (durum === "genel") {
-      const result = await prisma.$queryRaw`SELECT * FROM destekol`;
+    if (getir === "genel") {
+      const result =
+        await prisma.$queryRaw`SELECT * FROM destekal`;
       res.status(200).json(result);
-    } else if (durum === "id") {
-      const result = await prisma.$queryRaw`SELECT * FROM destekol where id=${getir}`;
-      res.status(200).json(result);
-      console.log(result);
     }
-     else {
-      const result = await prisma.$queryRaw`SELECT * FROM destekol=${getir}`;
+    else{
+      const result = await prisma.$queryRaw`SELECT * FROM User where pertcno=${getir}`;
       res.status(200).json(result);
     }
   }

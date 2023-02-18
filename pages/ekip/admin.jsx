@@ -16,6 +16,11 @@ export default function admin() {
     router.push("/ekip/destekol");
   };
 
+  const handleSubmit_bilgiler = () => {
+    console.log("Giriş Yapıldı liste");
+    router.push("/onemlibilgiler");
+  };
+
   return (
     <div className="relative z-10 overflow-hidden py-20 lg:py-[120px]">
       <div className="flex items-center justify-center mt-48">
@@ -31,6 +36,13 @@ export default function admin() {
             <FormAction
               handleSubmit={handleSubmit_destekol}
               text="Destek olanlar"
+              action="Button"
+            />
+          </div>
+          <div>
+            <FormAction
+              handleSubmit={handleSubmit_bilgiler}
+              text="Önemli Bilgiler"
               action="Button"
             />
           </div>

@@ -33,15 +33,21 @@ export default async (req, res) => {
     }
   } else if (req.method === "GET") {
     const { getir } = req.query;
+    const { durum } = req.query;
+    console.log("getir");
+    console.log(getir);
+    console.log("durum");
+    console.log(durum);
 
-    if (getir === "genel") {
+    if (durum === "genel") {
       const result =
         await prisma.$queryRaw`SELECT * FROM destekal`;
       res.status(200).json(result);
     }
-    else{
-      const result = await prisma.$queryRaw`SELECT * FROM destekol=${getir}`;
+    else if (durum === "id") {
+      const result = await prisma.$queryRaw`SELECT * FROM destekal where id=${getir}`;
       res.status(200).json(result);
+      console.log(result);
     }
   }
 };

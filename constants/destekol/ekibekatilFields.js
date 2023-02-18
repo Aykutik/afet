@@ -11,8 +11,8 @@ const ekibekatilFields=[
     {
         labelText:"İletişim Numarası",
         labelFor:"iletisim",
-        id:"iletisim",
-        name:"iletisim",
+        id:"telefon",
+        name:"telefon",
         type:"text",
         isRequired:false,
         placeholder:"İLETİŞİM NUMARASI"
@@ -38,8 +38,8 @@ const ekibekatilFields=[
     {
         labelText:"Açıklama",
         labelFor:"açıklama",
-        id:"açıklama",
-        name:"açıklama",
+        id:"aciklama",
+        name:"aciklama",
         type:"text",
         isRequired:true,
         placeholder:"AÇIKLAMA"

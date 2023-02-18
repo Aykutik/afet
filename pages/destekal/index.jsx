@@ -5,6 +5,7 @@ import Input from "@/components/Input";
 import { Router, useRouter } from "next/router";
 import Header from "@/components/layout/destekal";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const fields = yenikayitFields;
 let fieldsState = {};
@@ -33,37 +34,47 @@ export default function Login() {
   const todayDate = yyyy + "-" + mm + "-" + dd;
 
   const getPersonel = async () => {
-    const res = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}/destekal/destekal?adsoyad=${bilgi.adsoyad}&tcno=${bilgi.tcno}&telefon=${bilgi.telefon}&adres=${bilgi.adres}&konu=${bilgi.aciklama}&tarih=${todayDate}`
-    );
+    try {
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/destekal/destekal?adsoyad=${bilgi.adsoyad}&tcno=${bilgi.tcno}&telefon=${bilgi.telefon}&adres=${bilgi.adres}&konu=${bilgi.aciklama}&tarih=${todayDate}`
+      );
+      toast.success("Talebiniz Alındı. En Kısa Sürede İletişime Geçilecektir." , {autoClose: 1000});
+      router.push("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
     <div className="relative z-10 overflow-hiddenlg:py-[120px]">
       <div className=" flex items-center justify-center">
-      <div className="max-w-md w-80 space-y-8">
-      <Header heading={"Destek Al"} />
-      <form className="space-y-6" onSubmit={handleSubmit}>
-      <div>
-        {fields.map((field) => (
-          <Input
-            key={field.id}
-            handleChange={handleChange}
-            value={bilgi[field.id]}
-            labelText={field.labelText}
-            labelFor={field.labelFor}
-            id={field.id}
-            name={field.name}
-            type={field.type}
-            isRequired={field.isRequired}
-            placeholder={field.placeholder}
-          />
-        ))}
+        <div className="max-w-md w-80 space-y-8">
+          <Header heading={"Destek Al"} />
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            <div>
+              {fields.map((field) => (
+                <Input
+                  key={field.id}
+                  handleChange={handleChange}
+                  value={bilgi[field.id]}
+                  labelText={field.labelText}
+                  labelFor={field.labelFor}
+                  id={field.id}
+                  name={field.name}
+                  type={field.type}
+                  isRequired={field.isRequired}
+                  placeholder={field.placeholder}
+                />
+              ))}
+            </div>
+            <FormAction
+              handleSubmit={handleSubmit}
+              tur="form"
+              text="Kaydet ve ilet"
+            />
+          </form>
+        </div>
       </div>
-      <FormAction handleSubmit={handleSubmit} tur="form" text="Kaydet ve ilet" />
-    </form>
-      </div>
-    </div>
     </div>
   );
 }
