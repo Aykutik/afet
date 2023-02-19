@@ -16,7 +16,7 @@ module.exports = {
         danger: "#f0000",
         success: "#00ff00",
         yazi: "#000000",
-        tablo: "#eeeeee",
+        tablo: "#e9e9e9",
       },
     },
   },

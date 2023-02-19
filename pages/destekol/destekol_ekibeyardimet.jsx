@@ -34,7 +34,7 @@ function destekol_evinipaylas() {
     <div class="mx-auto mt-10 ml-5">
       <div class="flex flex-wrap lg:justify-between">
         <div class="w-full px-1 lg:w-1/2 xl:w-6/12">
-          <div class="mb-12 max-w-[570px] lg:mb-0 text-white">
+          <div class="mb-12 max-w-[570px] lg:mb-0 text-black">
             <h1 class="text-dark mb-6 text-[25px] font-bold uppercase sm:text-[30px] lg:text-[26px] xl:text-[30px]">
               EKİBİMİZE HANGİ KONULARDA YARDIMCI OLABİLİRSİN?
             </h1>

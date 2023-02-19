@@ -66,12 +66,12 @@ function index() {
         <div className="flex items-center justify-center">
           <div className="mx-auto flex flex-col lg:flex-row w-full">
             <div className="p-1.5 w-full lg:w-1/2 inline-block">
-              <div className="bg-white border rounded-md px-2 py-2 mb-2 font-bold">
+              <div className="bg-white shadow border rounded-md px-2 py-2 mb-2 font-bold">
                 <h1>Telefon Numaraları</h1>
               </div>
-              <div className="overflow-hidden border rounded-lg bg-arkaplan">
-                <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-gray-50 h-8 text-[11pt] text-left tel:text-[9pt]">
+              <div className="overflow-hidden shadow border rounded-lg bg-arkaplan">
+                <table className="min-w-full divide-y border shadow-md divide-gray-200 ">
+                  <thead className="bg-white h-8 text-[11pt] text-left tel:text-[9pt]">
                     <tr className="px-2">
                       <th className="px-2">Birim</th>
                       <th>Telefon</th>
@@ -90,8 +90,9 @@ function index() {
                       </tr>
                     ))}
                   </tbody>
-                </table>
-                {session && (
+                </table>                
+              </div>
+              {session && (
                   <div className="mt-2">
                     <FormAction
                       handleSubmit={ekleAc}
@@ -100,13 +101,12 @@ function index() {
                     />
                   </div>
                 )}
-              </div>
             </div>
             <div className="p-1.5 w-full inline-block">
-              <div className="bg-white border rounded-md px-2 py-2 mb-2 font-bold">
+              <div className="bg-white shadow border rounded-md px-2 py-2 mb-2 font-bold">
                 <h1>İnternet Siteleri</h1>
               </div>
-              <div className="overflow-hidden border rounded-lg bg-arkaplan">
+              <div className="overflow-hidden shadow border rounded-lg bg-arkaplan">
                 <table className="min-w-full divide-y divide-gray-200">
                   <thead className="bg-gray-50 h-8 text-[11pt] text-left tel:text-[9pt]">
                     <tr className="px-2">
@@ -126,7 +126,9 @@ function index() {
                     ))}
                   </tbody>
                 </table>
-                {session && (
+                
+              </div>
+              {session && (
                   <div className="mt-2">
                     <FormAction
                       handleSubmit={ekleAc_web}
@@ -135,7 +137,6 @@ function index() {
                     />
                   </div>
                 )}
-              </div>
             </div>
           </div>
         </div>

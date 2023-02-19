@@ -5,7 +5,7 @@ function iletisim() {
     <div>
       <div className="">
         <div className="">
-          <section className="relative z-10 overflow-hidden py-5 lg:py-[30px] text-white">
+          <section className="relative z-10 overflow-hidden py-5 lg:py-[30px] text-yazi">
             <div class="container mx-auto">
               <div class="flex flex-wrap lg:justify-between">
                 <div class="w-full px-4 lg:w-1/2 xl:w-6/12">

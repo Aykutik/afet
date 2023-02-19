@@ -89,7 +89,7 @@ export default function Home() {
             >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                 <li className="text-black">
-                  <Link href="/">Biz Kimiz</Link>
+                  <Link href="/bizkimiz">Biz Kimiz</Link>
                 </li>
 
                 <li className="text-black">
@@ -101,7 +101,7 @@ export default function Home() {
                 </li>
 
                 <li className="text-black">
-                  <Link href="/">Önemli Bilgiler</Link>
+                  <Link href="/onemlibilgiler">Önemli Bilgiler</Link>
                 </li>
 
                 {session ? (
