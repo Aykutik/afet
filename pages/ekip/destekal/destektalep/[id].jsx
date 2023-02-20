@@ -17,7 +17,7 @@ function index({ id }) {
   const liste = async () => {
     try {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/ekip/destekal?getir=${id}&durum=id`
+        `${process.env.NEXT_PUBLIC_VERCEL_URL}/ekip/destekal?getir=${id}&durum=id`
       );
       setTalep(res.data);
       console.log(res.data);
