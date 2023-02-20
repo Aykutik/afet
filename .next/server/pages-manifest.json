@@ -2,7 +2,9 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
+  "/": "pages/index.js",
   "/ekip/destekal": "pages/ekip/destekal.js",
   "/api/x7wUk5leY1jv/ekip/destekal": "pages/api/x7wUk5leY1jv/ekip/destekal.js",
-  "/api/x7wUk5leY1jv/ekip/onemlibilgiler": "pages/api/x7wUk5leY1jv/ekip/onemlibilgiler.js"
+  "/ekip/admin": "pages/ekip/admin.js"
 }
