@@ -36,7 +36,7 @@ function index() {
   const liste_telefon = async () => {
     try {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/ekip/ekip/onemlibilgiler?getir=telefon`
+        `${process.env.NEXT_PUBLIC_VERCEL_URL}/ekip/ekip/onemlibilgiler?getir=telefon`
       );
       setBirimler(res.data);
     } catch (err) {
@@ -47,7 +47,7 @@ function index() {
   const liste_web = async () => {
     try {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/ekip/onemlibilgiler?getir=web`
+        `${process.env.NEXT_PUBLIC_VERCEL_URL}/ekip/onemlibilgiler?getir=web`
       );
       setWeb(res.data);
     } catch (err) {
