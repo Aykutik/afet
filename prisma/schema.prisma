@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = env("NEXT_PUBLIC_VERCEL_URL")
+  url      = env("NEXT_PUBLIC_API_URL")
 }
 
 model User {
