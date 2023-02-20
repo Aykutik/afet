@@ -10,7 +10,8 @@ function index() {
   const liste = async () => {
     try {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/ekip/destekol?durum=genel`
+        // `${process.env.NEXT_PUBLIC_API_URL}/ekip/destekol?durum=genel`
+           `http://localhost:3000/api/x7wUk5leY1jv/ekip/destekol?durum=genel`
       );
       setTalepler(res.data);
       console.log(res.data);
