@@ -36,7 +36,7 @@ function index() {
   const liste_telefon = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3000/api/x7wUk5leY1jv/ekip/ekip/onemlibilgiler?getir=telefon`
+        `https://afet-y19k.vercel.app/api/x7wUk5leY1jv/ekip/ekip/onemlibilgiler?getir=telefon`
       );
       setBirimler(res.data);
     } catch (err) {
@@ -47,7 +47,7 @@ function index() {
   const liste_web = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3000/api/x7wUk5leY1jv/ekip/onemlibilgiler?getir=web`
+        `https://afet-y19k.vercel.app/api/x7wUk5leY1jv/ekip/onemlibilgiler?getir=web`
       );
       setWeb(res.data);
     } catch (err) {

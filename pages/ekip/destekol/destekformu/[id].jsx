@@ -59,7 +59,7 @@ function index({ id }) {
     // router.push("/ekip/destekol");
     try {
       const res = await axios.post(
-        `http://localhost:3000/api/x7wUk5leY1jv/ekip/destekol_tamamla?getir=${id}&durum=tamamla&kapatan=${session?.user.name}&kapatmatarihi=${tarih}`
+        `https://afet-y19k.vercel.app/api/x7wUk5leY1jv/ekip/destekol_tamamla?getir=${id}&durum=tamamla&kapatan=${session?.user.name}&kapatmatarihi=${tarih}`
       );
       setTalep(res.data);
       console.log(res.data);
